@@ -27,7 +27,7 @@ jobs:
       - name: Exit successfully
         run: exit 0
 
-  style:
+  Style:
     name: style
     runs-on: ubuntu-latest
 
