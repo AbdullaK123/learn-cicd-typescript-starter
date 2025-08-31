@@ -1,0 +1,23 @@
+name: cd
+on:
+    push:
+        branches: [main]
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+
+            - name: Set up node js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+
+            - name: Install dependancies
+              run: npm ci
+
+            - name: Build code
+              run: npm build
